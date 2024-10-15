@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+   body{
+    background: #212121;
+   }
+    .parameter{
+        background: orange;
+        color: black;
+        font-size: large;
+        text-align: center;
+        align-items: center;
+        width: 600px;
+        margin: 30px;
+    }
+    li{
+        margin: 20px;
+    }
+    .form{
+        display: flex;
+        height: 300px;
+        width: 600px;
+        background: grey;
+        font-family: sans-serif;
+        font-weight: 400;
+     
+      margin-top: 50px;
+        text-align: center;
+    }
+    .hieght{
+        font-size: larger;
+        font-weight: bold;
+    }
+    .weight{
+        font-size: larger;
+        font-weight: bold;
+    }
+    input{
+        width: 500px;
+    }
+button{
+    padding: 20px;
+    color: black;
+    background: green;
+    border-radius: 20px;
+}
+</style>
+<body>
+<center>
+
+    <h1 style="color: white;">BMI converter</h1>
+  <div class="form">
+    <form>
+        <p class="hieght"><label>Enter Your Height in cm : &nbsp;<input type="text" id="ht"></label></p>
+        <p class="weight"><label>Enter Your Weight in kg : &nbsp;<input type="text" id="wt"></label></p>
+        <button> calculate</button>
+       <div id="rst" style="height: 50px; font-size: large; font-weight: bold;"></div>
+    </form>
+    
+  </div>
+  
+    <div class="parameter">
+<ul>
+    <li>weight less than 20 is under weight
+        <li>weight greater than 40 is over weight </li>
+        <li>Normal range = 15 to 19</li>
+    </li>
+</ul>
+    </div>
+</center>
+
+<script>
+    const f = document.querySelector('form')
+  
+    f.addEventListener('submit',(e)=>{
+        e.preventDefault()
+
+
+const h = parseInt(document.querySelector('#ht').value)
+const w = parseInt(document.querySelector('#wt').value)
+const r = document.querySelector('#rst')
+     
+      if (h === ''|| h<0 || isNaN(h)) {
+    rst.innerHTML = 'please eneter valid hieght'
+  }
+   else if (w === ''|| w<0 || isNaN(w)) {
+    rst.innerHTML = 'please eneter valid weight'
+  }
+  else{
+ const bmi =   (w/((h*h)/1000)).toFixed(2)
+ if(bmi<20){
+    rst.innerHTML= [bmi] + 'you are under wieght';
+ }
+ else if(bmi>40){
+    rst.innerHTML= [bmi] + 'you are over wieght';
+ }
+ else{
+    rst.innerHTML= [bmi] + 'your wiegth is in range';
+ }
+
+  }
+
+    })
+
+    
+
+</script>
+</body>
+</html>

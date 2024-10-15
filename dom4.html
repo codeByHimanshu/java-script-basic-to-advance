@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul class="list">
+        <li>java script</li>
+    </ul>
+
+    <script>
+   addLang = (name) => {
+const li = document.createElement('li')
+li.innerHTML=[name]
+document.querySelector('.list').appendChild(li)
+        }
+       addLang('java')
+       addLang('python')
+
+       add = (name)=>{
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(name))
+        document.querySelector('.list').appendChild(li)
+       }
+       add('ruby')
+       add('c++')
+
+
+       const nl = document.querySelector('li:nth-child(1)')
+    const l = document.createTextNode('li')
+    l.textContent='golang'
+       nl.replaceWith(l)
+    </script>
+</body>
+</html>
